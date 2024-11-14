@@ -9,14 +9,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 		domain='https://kyrilsrizk.kinde.com'
 		redirectUri={
 			process.env.NODE_EVN === 'Production'
-				? 'https://todoapp-wheat-eight.vercel.app/'
+				? 'https://todoapp-wheat-eight.vercel.app'
 				: 'http://localhost:5173'
 		}
 		logoutUri={
 			process.env.NODE_EVN === 'Production'
-				? 'https://todoapp-wheat-eight.vercel.app/'
+				? 'https://todoapp-wheat-eight.vercel.app'
 				: 'http://localhost:5173'
 		}
+		isDangerouslyUseLocalStorage(ture)
 	>
 		<TodoContextProvider>
 			<App />
