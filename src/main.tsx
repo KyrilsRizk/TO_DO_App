@@ -7,8 +7,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 	<KindeProvider
 		clientId='9718138185e44922a4b478cd2f93955a'
 		domain='https://kyrilsrizk.kinde.com'
-		redirectUri='http://localhost:5173'
-		logoutUri='http://localhost:5173'
+		redirectUri={
+			process.env.NODE_EVN === 'production'
+				? 'https://todoapp-wheat-eight.vercel.app/'
+				: 'http://localhost:5173'
+		}
+		logoutUri={
+			process.env.NODE_EVN === 'production'
+				? 'https://todoapp-wheat-eight.vercel.app/'
+				: 'http://localhost:5173'
+		}
 	>
 		<TodoContextProvider>
 			<App />
